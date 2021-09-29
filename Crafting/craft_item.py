@@ -1,20 +1,26 @@
 from py_stealth.methods import *
 import inspect
 
-TARGET = "dagger"
-KEEP = False
+TARGET = "gears"
+KEEP = True
 VERBOSE = True
 #
 TINKER_TOOLS = 0x1EB8
 INGOTS = 0x1BF2
 CRAFTING_GUMP = 0x38920ABD
 ITEMS = {
+    # Tinkerinf
     "tinker_tools": {"category": 8, "button": 23, "type": 0x1EB8, "tool": "tinker_tools", "material": 0x1BF2},
     "saw": {"category": 8, "button": 65, "type": 0x1034, "tool": "tinker_tools", "material": 0x1BF2},
     "lockpick": {"category": 8, "button": 149, "type": 0x14FC, "tool": "tinker_tools", "material": 0x1BF2},
     "smiths_hammer": {"category": 8, "button": 121, "type": 0x0FB4, "tool": "tinker_tools", "material": 0x1BF2},
-    "dagger": {"category": 43, "button": 44, "type": 0x0F52, "tool": "smiths_hammer", "material": 0x1BF2},
+    "gears": {"category": 15, "button": 2, "type": 0x1053, "tool": "tinker_tools", "material": 0x1BF2},
 
+    # Blacksmithing
+    "dagger": {"category": 43, "button": 44, "type": 0x0F52, "tool": "smiths_hammer", "material": 0x1BF2},
+    "kryss": {"category": 43, "button": 65, "type": 0x1401, "tool": "smiths_hammer", "material": 0x1BF2},
+    "katana": {"category": 43, "button": 58, "type": 0x13FF, "tool": "smiths_hammer", "material": 0x1BF2},
+    "plate_gorget": {"category": 8, "button": 16, "type": 0x1413, "tool": "smiths_hammer", "material": 0x1BF2},
 }
 
 def log(message = ""):
@@ -77,4 +83,4 @@ if __name__ == "__main__":
 
         if not KEEP:
             AutoSell(item_to_craft["type"], 0xFFFF, -1)
-            UOSay("sell")
+            UOSay("Noah sell")
